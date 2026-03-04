@@ -98,108 +98,6 @@ animation:fadeUp 1s ease;
 .hero h2{
 font-size:50px;
 margin-bottom:20px;
-(190 líneas restantes)
-}
-/* ================= RESET ================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
-}
-
-body{
-background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
-color:#fff;
-overflow-x:hidden;
-}
-
-/* ================= ANIMACIÓN GENERAL ================= */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* ================= HEADER ================= */
-
-header{
-background:#111;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-flex-wrap:wrap;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 4px 20px rgba(0,0,0,.6);
-}
-
-.logo h1{
-color:#e10600;
-font-size:28px;
-letter-spacing:1px;
-}
-
-.logo p{
-font-size:13px;
-color:#aaa;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-nav a:hover{
-color:#e10600;
-}
-
-.carrito{
-background:#e10600;
-padding:8px 14px;
-border-radius:20px;
-font-weight:bold;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-height:75vh;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url("../img/zapatillas.png");
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero-content{
-animation:fadeUp 1s ease;
-}
-
-.hero h2{
-font-size:50px;
-margin-bottom:20px;
 }
 
 .hero p{
@@ -343,7 +241,7 @@ transform:scale(1.05);
 }
 
 .error{
-color:#ff4d4d;
+color:#d30e0e;
 font-size:13px;
 text-align:left;
 }

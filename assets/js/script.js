@@ -1,78 +1,77 @@
-// Seleccionamos todos los botones de productos
-const botones = document.querySelectorAll(".producto button");
+/* ===== CARRITO CON CONTADOR ===== */
 
-// Recorremos cada botón
-botones.forEach(boton => {
-    boton.addEventListener("click", function() {
-        
-        // Obtenemos el nombre del producto
-        const producto = this.parentElement.querySelector("h3").textContent;
-        
-        // Mostramos mensaje
-        alert("Has agregado al carrito: " + producto);
+let contador = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const spanContador = document.getElementById("contador");
+    const botones = document.querySelectorAll(".btn-carrito");
+
+    botones.forEach(btn => {
+        btn.addEventListener("click", () => {
+            contador++;
+
+            if (spanContador) {
+                spanContador.textContent = contador;
+            }
+        });
     });
+
 });
 
-const formulario = document.getElementById("formulario-contacto");
+/* ===== VALIDACIÓN FORMULARIO COMPLETA ===== */
 
-if (formulario) {
+const form = document.getElementById("formulario");
 
-    formulario.addEventListener("submit", function(e) {
-        e.preventDefault();
+if(form){
 
-        const nombre = document.getElementById("nombre");
-        const correo = document.getElementById("correo");
-        const mensaje = document.getElementById("mensaje");
-        const mensajeGeneral = document.getElementById("mensaje-general");
+form.addEventListener("submit", (e) => {
 
-        let valido = true;
+e.preventDefault();
 
-        const campos = [nombre, correo, mensaje];
+let nombre = document.getElementById("nombre").value.trim();
+let ciudad = document.getElementById("ciudad").value.trim();
+let email = document.getElementById("email").value.trim();
+let asunto = document.getElementById("asunto").value.trim();
+let descripcion = document.getElementById("descripcion").value.trim();
 
-        campos.forEach(campo => {
-            campo.classList.remove("error", "correcto");
-            campo.nextElementSibling.textContent = "";
-        });
+let valido = true;
 
-        // Nombre
-        if (nombre.value.trim().length < 4) {
-            nombre.classList.add("error");
-            nombre.nextElementSibling.textContent = "Debe tener al menos 4 caracteres.";
-            valido = false;
-        } else {
-            nombre.classList.add("correcto");
-        }
+document.querySelectorAll(".error").forEach(e => e.textContent = "");
 
-        // Correo
-        if (!correo.value.includes("@") || correo.value.length < 5) {
-            correo.classList.add("error");
-            correo.nextElementSibling.textContent = "Correo inválido.";
-            valido = false;
-        } else {
-            correo.classList.add("correcto");
-        }
+if(nombre.length < 3){
+document.getElementById("error-nombre").textContent = "Mínimo 3 caracteres";
+valido = false;
+}
 
-        // Mensaje
-        if (mensaje.value.trim().length < 5) {
-            mensaje.classList.add("error");
-            mensaje.nextElementSibling.textContent = "El mensaje es muy corto.";
-            valido = false;
-        } else {
-            mensaje.classList.add("correcto");
-        }
+if(ciudad === ""){
+document.getElementById("error-ciudad").textContent = "Campo obligatorio";
+valido = false;
+}
 
-        if (!valido) {
-            mensajeGeneral.textContent = "Corrige los campos en rojo.";
-            mensajeGeneral.style.color = "red";
-            return;
-        }
+let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        mensajeGeneral.textContent = "Mensaje enviado correctamente.";
-        mensajeGeneral.style.color = "grey";
+if(!regex.test(email)){
+document.getElementById("error-email").textContent = "Email inválido";
+valido = false;
+}
 
-        formulario.reset();
+if(asunto === ""){
+document.getElementById("error-asunto").textContent = "Campo obligatorio";
+valido = false;
+}
 
-        campos.forEach(campo => campo.classList.remove("correcto"));
-    });
+if(descripcion.length < 10){
+document.getElementById("error-descripcion").textContent = "Mínimo 10 caracteres";
+valido = false;
+}
+
+if(valido){
+document.getElementById("mensaje-final").textContent = "Formulario enviado correctamente ✅";
+document.getElementById("mensaje-final").style.color = "green";
+form.reset();
+}
+
+});
 
 }

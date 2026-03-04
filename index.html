@@ -1,31 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>ZoneSport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZoneSport | Tienda Deportiva</title>
+
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
 
 <header>
-    <h1>ZoneSport</h1>
+    <div class="logo">
+        <h1>ZoneSport</h1>
+        <p>Tu energía comienza aquí</p>
+    </div>
+
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="categorias.html">Categorías</a>
-        <a href="productos.html">Productos</a>
-        <a href="contacto.html">Contacto</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
     </nav>
+
+    <div class="carrito">
+        🛒 <span id="contador">0</span>
+    </div>
 </header>
 
-<section>
-    <h2>Bienvenido a nuestra tienda deportiva</h2>
-    <p>Encuentra los mejores artículos deportivos: fútbol, gimnasio y running.</p>
+
+<main>
+
+<section class="hero">
+    <article class="hero-content">
+        <h2>Equípate como un profesional</h2>
+        <p>Rendimiento • Estilo • Calidad deportiva</p>
+        <br>
+        <a href="categorias.html" class="btn-principal">Ver Categorías</a>
+    </article>
 </section>
 
+<section>
+<h2>¿Por qué elegir ZoneSport?</h2>
+
+<article>
+<p>🔥 Calidad Premium</p>
+<p>🚚 Envíos rápidos a todo el país</p>
+<p>💳 Pagos 100% seguros</p>
+</article>
+
+</section>
+
+<section>
+
+<h2>Productos Destacados</h2>
+
+<div class="contenedor-productos">
+
+<article class="producto">
+<img src="assets/img/balon de futbol.png">
+<h3>Balón Profesional</h3>
+<p class="precio">$35</p>
+<button class="btn-carrito">Agregar</button>
+</article>
+
+<article class="producto">
+<img src="assets/img/zapatillas.png">
+<h3>Zapatillas Running</h3>
+<p class="precio">$80</p>
+<button class="btn-carrito">Agregar</button>
+</article>
+
+<article class="producto">
+<img src="assets/img/mancuernas.png">
+<h3>Mancuernas Fitness</h3>
+<p class="precio">$45</p>
+<button class="btn-carrito">Agregar</button>
+</article>
+
+</div>
+
+</section>
+
+</main>
+
+
 <footer>
-    <p>© 2026 ZoneSport</p>
+    <section>
+        <p>© 2026 ZoneSport - Todos los derechos reservados</p>
+        <p>Síguenos en redes sociales</p>
+    </section>
 </footer>
 
 <script src="assets/js/script.js"></script>
+
 </body>
 </html>
